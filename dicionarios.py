@@ -51,4 +51,57 @@ print(f'Encontrei o pais {pais}'.format(pais=pais))
 
 # Caso o get nao encontre o objeto com a chave informada, será retornado o valor None e não será gerado KeyError
 
+# Podemos verificar se determinada chave se encontra em um dicionario
+print("\n### verificando se a chave existe no dicionario ###")
+print('br' in paises)
+print('ru' in paises)
+print('Estados Unidos' in paises)
 
+if 'ru' in paises:
+    russia = paises.get('ru')
+print(russia)
+
+# Podemos utilizar qualquer tipo de dado (int, float, string, boolean), inclusive lista, tupla, dicionario como chaves de dicionarios.
+# Tuplas são bastante interessantes de serem utilizadas como chave de dicionario, pois as mesmas são imultaveis.
+localidades = {
+    (35.6895, 39.6917) : 'Escritorio em Tokio',
+    (40.7128, 74.0060) : 'Escritorio em Nova York',
+    (35.6895, 122.4194) : 'Escritório em São Paulo',
+}
+
+print(localidades)
+print(type(localidades))
+
+
+# Adicionar elementos em um dicionario
+print("\n ### Adicionar elementos em um dicionario ###")
+receita = {'jan': 100, 'fev': 120, 'mar': 300}
+print(receita)
+print(type(receita))
+
+# Forma 1 (mais comum)
+print('\nForma 1 - Adicionar elementos em um dicionario')
+receita['abr'] = 350
+print(receita)
+
+# Forma 2
+print('\nForma 2 - Adicionar elementos em um dicionario')
+novo_dado = {'mai': 500}
+receita.update(novo_dado) # receita.update({'mai': 500})
+print(receita)
+
+# Atualizando dados em um dicionario
+
+# Forma 1
+print("\n### Atualizando dados em um dicionario - Forma 1 ###")
+print(receita)
+receita['mai'] = 550
+print(receita)
+
+# Forma 2
+print("\n### Atualizando dados em um dicionario - Forma 2 ###")
+receita.update({'mai':600})
+print(receita)
+
+# CONCLUSAO 1: A forma de adicionar novos elementos ou atualizar dados em um dicionario eh a mesma
+# CONCLUSAO 2: Em dicionarios, NAO podemos ter chaves repetidas
