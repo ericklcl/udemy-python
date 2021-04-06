@@ -17,6 +17,8 @@ print(dicionario['curso'])
 
 # lambda sao funcoes sem nome que podem ou nao receber parametros de entrada e retornar valores
 
+
+# Fazendo o import
 from collections import defaultdict
 
 dicionario = defaultdict(lambda: 0)
@@ -24,9 +26,10 @@ dicionario = defaultdict(lambda: 0)
 print(dicionario)
 
 dicionario['curso'] = 'Programacao em Python Essencial'
+
 print(dicionario)
 
-print(dicionario['outro'])
+print(dicionario['outro']) # Keyerror em um dicionario comum, mas aqui nao
 
 print(dicionario)
 
