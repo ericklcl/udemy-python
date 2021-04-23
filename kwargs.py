@@ -73,3 +73,48 @@ minha_funcao(18, 'Felicity', 453, solteiro=True)
 minha_funcao(34, 'Felipe', eu='Nao', voce='vai')
 minha_funcao(19, 'Carla', 9, 4, 3, java=False, python=True)
 
+
+# Entenda por que eh importante manter a ordem dos parametros na declaracao
+
+def mostra_info(a, b, *args, instrutor='Geek', **kwargs):
+    return [a, b, args, instrutor, kwargs]
+
+
+print(mostra_info(1, 2, 3, sobrenome='University', cargo='Instrutor'))
+
+
+def mostra_info(a, b, instrutor='Geek', *args, **kwargs):
+    return [a, b, args, instrutor, kwargs]
+
+
+"""
+a = 1
+b = 2,
+instrutor = 3
+args = (4,)
+kwargs = {sobrenome='university', cargo='instrutor'}
+"""
+print(mostra_info(1, 2, 3, 4, sobrenome='University', cargo='Instrutor'))
+
+
+# Desempacotar com kwargs
+
+def mostra_nomes(**kwargs):
+    return f"{kwargs['nome']} {kwargs['sobrenome']}"
+
+
+nomes = {'nome': 'Felicity', 'sobrenome': 'Jones'}
+
+print(mostra_nomes(**nomes))
+
+# Os nomes da chave em um dicionario devem ser os mesmos dos parametros da funcao
+dicionario = dict(a=1, b=2, c=3)
+
+
+def soma(a, b, c):
+    print(a + b + c)
+
+
+soma(**dicionario)
+
+# Se os nomes das chaves dos dicionarios forem diferentes do parametro da funcao sera gerado um TypeError.
