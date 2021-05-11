@@ -1,5 +1,5 @@
 """
-Reduce
+Reduce esta contido no pacote functools
 
 Para entender o reduce()
 
@@ -38,6 +38,23 @@ Alternativamente, poderiamos ver a funcao reduce() como:
 funcao(funcao(funcao(funcao(a1, a2), a3),a4)...,an)
 """
 
-# Como funciona na pratica
+# Como funciona na pratica ?
 
+# Vamos utilizar a funcao reduce() para multiplicar todos os numeros de uma lista
 
+from functools import reduce
+
+dados = [2, 3, 4, 5, 7, 11, 13, 17, 19, 23, 29]
+
+# Para utilizar o reduce, nos precisamos de uma funcao que receba DOIS parametros.
+
+multi = lambda x, y: x * y
+
+res = reduce(multi, dados)
+print(res)
+
+# Utilizando o loop normal
+res = 1
+for num in dados:
+    res = res * num
+print(res)
