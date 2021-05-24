@@ -19,3 +19,15 @@ print(arquivo.read())
 arquivo.seek(0)
 print(arquivo.readline())
 print(arquivo.readline())
+
+arquivo.seek(0)
+ret = arquivo.readline()
+
+print(type(ret))
+print(ret)
+print(ret.split(" "))
+
+print([len(palavra) for palavra in ret.split(" ")])
+
+arquivo = open('texto.txt')
+print(len(arquivo.readlines()))
